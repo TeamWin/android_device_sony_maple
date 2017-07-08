@@ -40,22 +40,18 @@ on early-init
 on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
+    symlink /system/vendor /vendor
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
     install_keyring
-    setprop ro.crypto.type file
-    setprop ro.crypto.state encrypted
     
     start pulldecryptfiles
 
 on post-fs
     # start clearpad_post_probe when filesystem is available for fwflash
     write /sys/devices/virtual/input/clearpad/post_probe_start 1
-
-#on property:ro.crypto.state=encrypted
-#    start sbinqseecomd
 
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
@@ -70,3 +66,6 @@ on boot
     write /sys/class/android_usb/android0/idProduct 5${ro.usb.pid_suffix}
 
     start sbinqseecomd
+
+on property:ro.crypto.fs_crypto_blkdev=/dev/block/dm-0
+    stop sbinqseecomd

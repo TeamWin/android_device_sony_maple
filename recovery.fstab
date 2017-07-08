@@ -5,7 +5,7 @@
 /system          ext4      /dev/block/bootdevice/by-name/system        flags=display="System";mounttodecrypt;
 /data            auto      /dev/block/bootdevice/by-name/userdata      flags=encryptable=footer;length=-16384;retainlayoutversion;
 /cache           auto      /dev/block/bootdevice/by-name/cache
-/sdcard1         vfat      /dev/block/mmcblk1p1                        flags=display="Micro SDcard";storage;wipeingui;removable;
+/sdcard1         vfat      /dev/block/mmcblk0p1                        flags=display="Micro SDcard";storage;wipeingui;removable;
 /usbdisk         auto      /dev/block/sdg1    /dev/block/sdg           flags=display="USB OTG";storage;wipeingui;removable;
 /idd             ext4      /dev/block/bootdevice/by-name/diag          flags=display="Diag";backup=1;
 #/rca             ext4      /dev/block/bootdevice/by-name/apps_log      flags=display="AppsLog";backup=1;usermrf;
