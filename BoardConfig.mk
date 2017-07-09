@@ -81,7 +81,6 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_HWC2 := true
 
 # TWRP specific build flags
-RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
 #TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
@@ -103,6 +102,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
+TWRP_EVENT_LOGGING := true
 TW_USE_NEW_MINADBD := true
 
 TARGET_RECOVERY_DEVICE_MODULES := libbinder libgui libui libEGL libGLESv2 libprotobuf-cpp-lite libsync
