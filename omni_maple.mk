@@ -29,6 +29,10 @@ $(call inherit-product, vendor/omni/config/common.mk)
 PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    device/sony/maple/gpio-keys.kl:recovery/root/system/usr/keylayout/gpio-keys.kl
+
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=480 \
     ro.usb.pid_suffix=1F1
