@@ -49,7 +49,10 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
-TARGET_PREBUILT_KERNEL := device/sony/maple/prebuilt/Image.gz-dtb
+TARGET_KERNEL_SOURCE := kernel/sony/msm
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_KERNEL_CONFIG := aosp_yoshino_maple_defconfig
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
