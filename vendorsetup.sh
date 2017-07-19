@@ -1,2 +1,1 @@
-add_lunch_combo omni_maple-eng
 add_lunch_combo omni_maple-userdebug

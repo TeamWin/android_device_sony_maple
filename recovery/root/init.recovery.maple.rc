@@ -62,8 +62,8 @@ service sbinqseecomd /sbin/qseecomd
 
 on boot
     setprop sys.usb.config adb
-    write /sys/class/android_usb/android0/idVendor 0FCE
-    write /sys/class/android_usb/android0/idProduct 5${ro.usb.pid_suffix}
+    write /sys/class/android_usb/android0/idVendor 0x0fce
+    write /sys/class/android_usb/android0/idProduct 0x7${ro.usb.pid_suffix}
 
     start sbinqseecomd
 

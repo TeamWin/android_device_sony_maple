@@ -1,23 +1,9 @@
-# mount point	fstype	device					device2				flags
+# mount point    fstype    device            [device2]   fstype2
+/boot           emmc    /dev/block/bootdevice/by-name/boot
+/recovery       emmc    /dev/block/bootdevice/by-name/FOTAKernel
+/system         ext4    /dev/block/bootdevice/by-name/system
+/cache          ext4    /dev/block/bootdevice/by-name/cache
+/data           ext4    /dev/block/bootdevice/by-name/userdata          length=-16384
 
-/recovery        emmc      /dev/block/bootdevice/by-name/FOTAKernel    flags=backup=1;display="FOTAKernel";
-/ta              emmc      /dev/block/bootdevice/by-name/TA            flags=backup=1;display="TA "Trim-Area"";
-/system          ext4      /dev/block/bootdevice/by-name/system        flags=display="System";mounttodecrypt;
-/data            auto      /dev/block/bootdevice/by-name/userdata      flags=encryptable=footer;length=-16384;retainlayoutversion;
-/cache           auto      /dev/block/bootdevice/by-name/cache
-/sdcard1         vfat      /dev/block/mmcblk0p1                        flags=display="Micro SDcard";storage;wipeingui;removable;
-/usbdisk         auto      /dev/block/sdg1    /dev/block/sdg           flags=display="USB OTG";storage;wipeingui;removable;
-/idd             ext4      /dev/block/bootdevice/by-name/diag          flags=display="Diag";backup=1;
-#/rca             ext4      /dev/block/bootdevice/by-name/apps_log      flags=display="AppsLog";backup=1;usermrf;
-/oem             ext4      /dev/block/bootdevice/by-name/oem           flags=display="OEM";backup=1;
-/qns             ext4      /dev/block/bootdevice/by-name/Qnovo         flags=display="Qnovo";backup=1;
-
-/boot            emmc      /dev/block/bootdevice/by-name/boot    flags=backup=1;display="Kernel";
-/modem_fs1       emmc      /dev/block/bootdevice/by-name/modemst1    flags=display="modem_fs1 "Baseband"";backup=1;mounttodecrypt;subpartitionof=/boot;
-/modem_fs2       emmc      /dev/block/bootdevice/by-name/modemst2    flags=display="modem_fs2 "Baseband"";backup=1;mounttodecrypt;subpartitionof=/boot;
-
-/firmware        vfat      /dev/block/bootdevice/by-name/modem           flags=display="Firmware";mounttodecrypt;fsflags=ro,context=u:object_r:firmware_file:s0;
-/dsp             ext4      /dev/block/bootdevice/by-name/dsp
-/persist         ext4      /dev/block/bootdevice/by-name/persist
-/keymaster       emmc      /dev/block/bootdevice/by-name/keymaster
-/misc            emmc      /dev/block/bootdevice/by-name/misc
+/external_sd    auto    /dev/block/mmcblk1p1    /dev/block/mmcblk1      flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg        auto    /dev/block/sda1         /dev/block/sda          flags=display="USB OTG";storage;wipeingui;removable
