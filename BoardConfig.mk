@@ -81,6 +81,7 @@ TW_BRIGHTNESS_PATH := "/sys/class/leds/wled/brightness"
 TW_EXCLUDE_SUPERSU := true
 TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_EXFAT := true
 TW_INCLUDE_NTFS_3G := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
